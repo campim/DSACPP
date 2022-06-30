@@ -8,7 +8,7 @@ them to a vector. Then it uses the bubble sort simple to order them in ascending
 
 **3. insertionsort.cpp :** insertion sort algorithm with STL vector of integers. Similar to the bubble simple version.
 
-**4. selectionsort.cpp :** Selection sort algorithm with STL vector of integers.
+**4. selectionsort.cpp :** Selection sort algorithm with STL vector of integers. Ascending or descending order option.
 
 
 

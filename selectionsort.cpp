@@ -1,4 +1,4 @@
-/* Selection sort - c++ version with STL std::vector as a vector of integers
+/* selection sort - c++ version with STL std::vector as a vector of integers
  Author Daniel G. Campos (2022)
 
  LICENSING
@@ -56,10 +56,34 @@ bool checkInteger(string inputstr)
     return true;
 }
 
-/** selectionsort: main function to sort an array */
-void selectionsort()
+/** selectionsort: main function to sort an array, ascending or descending option */
+void selectionsort(int order)
 {
-    
+    int n = my_list.size();
+
+    for (int step = 0; step < n - 1; step++) 
+    {
+        iterations++;
+        int min_idx = step;
+        for (int i = step + 1; i < n; i++) 
+        {
+            iterations++;
+            if (order == 1)
+            {
+                //ascending order
+                if (my_list[i] < my_list[min_idx])
+                    min_idx = i;
+            }
+            else
+            {
+                if (my_list[i] > my_list[min_idx])
+                    min_idx = i;
+            }
+        }
+        // we use std::swap, here we can just use swap
+        //swap(my_list[min_idx], my_list[step]);
+        std::swap(my_list[min_idx], my_list[step]);
+    }
 }
 
 int main()
@@ -67,8 +91,10 @@ int main()
     int top_limit = 0, quantity_items = 0;
     string inputstr;
     bool isInt = false;
+    int order = 1;  // ascending order by default
+    bool answer = false;
 
-    cout << "*** Selection sort - c++ - ***" << endl;
+    cout << "*** selection sort - c++ - ***" << endl;
 
     while (!isInt)
     {
@@ -118,6 +144,29 @@ int main()
         }
     }
 
+    while (!answer)
+    {
+        cout << "Please select which order to sort : 1=ascending 2=descending (1 is default):" << endl;
+        cin >> inputstr;
+        bool isInt = checkInteger(inputstr);
+        if (!isInt)
+        {
+            cout << "Please enter only valid values (1 or 2) " << endl;
+        }
+        else
+        {
+            if ( (stoi(inputstr)) > 2 )
+            {
+                answer = false;
+            }
+            else
+            {
+                order = stoi(inputstr);
+                break;
+            }
+        }
+    }
+
     create_list(top_limit, quantity_items);
 
     cout << " unsorted array : " << endl;
@@ -127,7 +176,7 @@ int main()
     }
     cout << " " << endl;
 
-    selectionsort();
+    selectionsort(order);
 
     cout << " sorted array : " << endl;
     for (int i = 0; i < my_list.size(); i ++)
