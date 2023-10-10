@@ -10,7 +10,7 @@
  See the GNU General Public License for more details.
 */
 
-#include <iostream>
+#include<iostream>
 #include<vector> 
 
 using namespace std;
