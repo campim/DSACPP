@@ -10,7 +10,7 @@ them to a vector. Then it uses the bubble sort simple to order them in ascending
 
 **4. selectionsort.cpp :** Selection sort algorithm with STL vector of integers. Ascending or descending order option.
 
-
+**5. shellsort.cpp :** Shell sort algorithm is a similar general version of the insertion sort algorithm. Also using STL vector of integers.
 
 
 LICENSING
