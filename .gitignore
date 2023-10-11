@@ -1,5 +1,5 @@
-algorithm_bubble_optimized
-algorithm_bubble_simple
-insertion_copy
-selection_copy
-shell_sort_algorithm
+bubblesortoptimized
+bubblesortsimple
+insertionsort
+selectionsort
+shellsort
