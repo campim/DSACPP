@@ -1,5 +1,5 @@
-/* selection sort - c++ version with STL std::vector as a vector of integers
- Author Daniel G. Campos (2022)
+/* merge sort - c++ version with STL std::vector as a vector of integers -
+ Author Daniel G. Campos (2023)
 
  LICENSING
  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -56,33 +56,78 @@ bool checkInteger(string inputstr)
     return true;
 }
 
-/** selectionsort: main function to sort an array, ascending or descending option */
-void selectionsort(int order)
+// Merge two subarrays L and M into arr
+void merge(std::vector<int> arr, int p, int q, int r) 
 {
-    int n = my_list.size();
+    // Create L ← A[p..q] and M ← A[q+1..r]
+    int n1 = q - p + 1;
+    int n2 = r - q;
 
-    for (int step = 0; step < n - 1; step++) 
+    int L[n1], M[n2];
+
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[p + i];
+        
+    for (int j = 0; j < n2; j++)
+        M[j] = arr[q + 1 + j];
+
+    // Maintain current index of sub-arrays and main array
+    int i, j, k;
+    i = 0;
+    j = 0;
+    k = p;
+
+    // Until we reach either end of either L or M, pick larger among
+    // elements L and M and place them in the correct position at A[p..r]
+    while (i < n1 && j < n2) 
     {
-        iterations++;
-        int min_idx = step;
-        for (int i = step + 1; i < n; i++) 
+        if (L[i] <= M[j]) 
         {
             iterations++;
-            if (order == 1)
-            {
-                //ascending order
-                if (my_list[i] < my_list[min_idx])
-                    min_idx = i;
-            }
-            else
-            {
-                if (my_list[i] > my_list[min_idx])
-                    min_idx = i;
-            }
+            arr[k] = L[i];
+            i++;
+        } 
+        else
+        {
+            iterations++;
+            arr[k] = M[j];
+            j++;
         }
-        // we use std::swap, here we can just use swap
-        //swap(my_list[min_idx], my_list[step]);
-        std::swap(my_list[min_idx], my_list[step]);
+        k++;
+    }
+
+    // When we run out of elements in either L or M,
+    // pick up the remaining elements and put in A[p..r]
+    while (i < n1) 
+    {
+        iterations++;
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) 
+    {
+        iterations++;
+        arr[k] = M[j];
+        j++;
+        k++;
+    }
+}
+
+/** mergesort: main function to sort an array - recursive - */
+void mergesort(std::vector<int> arr, int l, int r) 
+{
+    if (l < r) 
+    {
+        // m is the point where the array is divided into two subarrays
+        int m = l + (r - l) / 2;
+
+        mergesort(arr, l, m);
+        mergesort(arr, m + 1, r);
+
+        // Merge the sorted subarrays
+        merge(arr, l, m, r);
     }
 }
 
@@ -91,10 +136,9 @@ int main()
     int top_limit = 0, quantity_items = 0;
     string inputstr;
     bool isInt = false;
-    int order = 1;  // ascending order by default
     bool answer = false;
 
-    cout << "*** selection sort - c++ - ***" << endl;
+    cout << "*** merge sort - c++ - using vector of integers and random generated numbers array ***" << endl;
 
     while (!isInt)
     {
@@ -144,29 +188,6 @@ int main()
         }
     }
 
-    while (!answer)
-    {
-        cout << "Please select which order to sort : 1=ascending 2=descending (1 is default):" << endl;
-        cin >> inputstr;
-        bool isInt = checkInteger(inputstr);
-        if (!isInt)
-        {
-            cout << "Please enter only valid values (1 or 2) " << endl;
-        }
-        else
-        {
-            if ( (stoi(inputstr)) > 2 )
-            {
-                answer = false;
-            }
-            else
-            {
-                order = stoi(inputstr);
-                break;
-            }
-        }
-    }
-
     create_list(top_limit, quantity_items);
 
     cout << " unsorted array : " << endl;
@@ -176,7 +197,7 @@ int main()
     }
     cout << " " << endl;
 
-    selectionsort(order);
+    mergesort(my_list, 0, my_list.size() - 1);
 
     cout << " sorted array : " << endl;
     for (int i = 0; i < my_list.size(); i ++)
