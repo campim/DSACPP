@@ -64,7 +64,6 @@ void countingsort()
     // Find the largest element of the array
     for (int i = 1; i < my_list.size(); i++) 
     {
-        iterations++;
         if (my_list[i] > max)
             max = my_list[i];
     }    
@@ -72,7 +71,6 @@ void countingsort()
     // Initialize count array with all zeros.
     for (int i = 0; i <= max; ++i) 
     {
-        iterations++;
         count[i] = 0;
     }    
 
