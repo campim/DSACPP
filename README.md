@@ -12,7 +12,10 @@ them to a vector. Then it uses the bubble sort simple to order them in ascending
 
 **5. shellsort.cpp :** Shell sort algorithm is a similar general version of the insertion sort algorithm. Also using STL vector of integers.
 
-**6. mergesort.cpp :** Merge sort algotirhm, also using random STL vector of integers.
+**6. mergesort.cpp :** Merge sort algorithm, also using random STL vector of integers.
+
+**7. countingsort.cpp :** Counting sort algorithm, create an array of values counting occurrence of values in an index, using random STL vector of integers.
+
 
 
 LICENSING

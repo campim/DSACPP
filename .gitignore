@@ -4,3 +4,4 @@ insertionsort
 selectionsort
 shellsort
 mergesort
+countingsort
