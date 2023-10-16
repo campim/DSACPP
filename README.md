@@ -16,6 +16,9 @@ them to a vector. Then it uses the bubble sort simple to order them in ascending
 
 **7. countingsort.cpp :** Counting sort algorithm, create an array of values counting occurrence of values in an index, using random STL vector of integers.
 
+**8. quicksort.cpp :** Quick sort algorithm, using STL vector of integers and random generated numbers to fill it, we use the rightmost element as pivot, and
+recursion.
+
 
 
 LICENSING
