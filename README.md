@@ -19,6 +19,9 @@ them to a vector. Then it uses the bubble sort simple to order them in ascending
 **8. quicksort.cpp :** Quick sort algorithm, using STL vector of integers and random generated numbers to fill it, we use the rightmost element as pivot, and
 recursion.
 
+**9. radixsort.cpp :** Radix sort algorithm, using STL vector of integers and random generated numbers. Also using max_element of STL to find the max element, 
+and to print the vector we use iterators of the STL vector.
+
 
 
 LICENSING

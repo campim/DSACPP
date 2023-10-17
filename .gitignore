@@ -6,3 +6,4 @@ shellsort
 mergesort
 countingsort
 quicksort
+radixsort
