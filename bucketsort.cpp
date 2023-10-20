@@ -116,6 +116,7 @@ int main()
     bool isInt = false;
 
     cout << "*** bucket sort version - c++ - ***" << endl;
+    cout << "*** this version of bucket sort uses integers instead of float numbers ***" << endl;
 
     while (!isInt)
     {
