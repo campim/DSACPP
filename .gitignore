@@ -7,3 +7,4 @@ mergesort
 countingsort
 quicksort
 radixsort
+bucketsort

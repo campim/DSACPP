@@ -22,6 +22,8 @@ recursion.
 **9. radixsort.cpp :** Radix sort algorithm, using STL vector of integers and random generated numbers. Also using max_element of STL to find the max element, 
 and to print the vector we use iterators of the STL vector.
 
+**10. bucketsort.cpp :** Bucket sort algorithm, using STL vector of integers and random generated numbers, also using insertion sort as secondary algorithm for 
+sorting elements inside every bucket.
 
 
 LICENSING
