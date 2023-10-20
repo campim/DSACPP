@@ -25,6 +25,8 @@ and to print the vector we use iterators of the STL vector.
 **10. bucketsort.cpp :** Bucket sort algorithm, using STL vector of integers and random generated numbers, also using insertion sort as secondary algorithm for 
 sorting elements inside every bucket.
 
+**11. heapsort.cpp :** Heap sort algorithm, using STL vector of integers and random generated numbers. Complete binary tree data structure, recursive.
+
 
 LICENSING
 

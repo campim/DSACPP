@@ -8,3 +8,4 @@ countingsort
 quicksort
 radixsort
 bucketsort
+heapsort
