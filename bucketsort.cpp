@@ -91,7 +91,7 @@ void bucketsort()
     }
 
    // sort individual buckets, we use the index of the buckets to tell the function which bucket to sort
-    for (int i = 0; i < bucket[i].size(); i++) 
+    for (int i = 0; i < (sizeof(bucket)/sizeof(bucket[0])); i++) 
     {
         insertionsort(i);
     }
