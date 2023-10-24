@@ -27,6 +27,8 @@ sorting elements inside every bucket.
 
 **11. heapsort.cpp :** Heap sort algorithm, using STL vector of integers and random generated numbers. Complete binary tree data structure, recursive.
 
+**12. linearsearch.cpp :** Very simple linear search using STL vector of integers and random generated numbers.
+
 
 LICENSING
 
