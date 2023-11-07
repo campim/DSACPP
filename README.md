@@ -29,6 +29,8 @@ sorting elements inside every bucket.
 
 **12. linearsearch.cpp :** Very simple linear search using STL vector of integers and random generated numbers.
 
+**13. binary_search.py :** Simple binary search example, with quick sort as ordering algorithm and random generated numbers.
+
 
 LICENSING
 
