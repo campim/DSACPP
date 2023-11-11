@@ -31,6 +31,7 @@ sorting elements inside every bucket.
 
 **13. binarysearch.cpp :** Simple binary search example, with quick sort as ordering algorithm and random generated numbers.
 
+**14. simplestack.cpp :** Very simple example of a stack of integers, using STL.
 
 LICENSING
 
